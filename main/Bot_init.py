@@ -7,10 +7,10 @@ from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler
 from telegram.ext import Filters
 import sys
+
 sys.path.append('../')
 
 from pyTeleBot.resources import config as cfg
-
 from pyTeleBot.resources.json_search import *
 
 
@@ -96,6 +96,7 @@ def main():
     updater.dispatcher.add_handler(con_handler)
     updater.dispatcher.add_handler(MessageHandler(Filters.all, echo_handler))
     updater.start_polling()
+    print(" Бот работает")
     updater.idle()
 
 
