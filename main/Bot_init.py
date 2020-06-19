@@ -15,30 +15,30 @@ from pyTeleBot.resources.json_search import *
 
 
 begin, word, match = 0, 1, 2
-def start_message(update, context: CallbackContext):
+def start_message(update, CallbackContext):
     update.message.reply_text('Привет, человек! Я - телеграмный бот, который может оказаться весьма полезным'
                               ' при изучении английского языка. Отправь команду /continue чтобы продолжить общаться'
                               ' или введи /stop если я тебе больше не нужен ')
     return begin
 
 
-def start_working(update, context: CallbackContext):
+def start_working(update, CallbackContext):
     update.message.reply_text('Хорошо, тогда начнем. Введи любое слово (на английском) и я '
                               'покашу тебе все возможные определения этого слова, тоже разумеется '
                               'на английском языке')
     return word
 
 
-def continue_working(update, context: CallbackContext):
+def continue_working(update, CallbackContext):
     update.message.reply_text('Однако, здравствуйте. Я снова готов работать для вас')
     return word
 
 
-def echo_handler(update: Update, context: CallbackContext):
+def echo_handler(update, CallbackContext):
     update.message.reply_text('Чтобы продолжить пользоваться ботом, нажми или введи /continue')
 
 
-def word_handler(update, context: CallbackContext):
+def word_handler(update, CallbackContext):
     global text
     text = update.message.text
     answer = retrive_definition(text)
@@ -58,7 +58,7 @@ def word_handler(update, context: CallbackContext):
         return word
 
 
-def get_matches(update, context: CallbackContext):
+def get_matches(update, CallbackContext):
     action = update.message.text
     if action.lower() == "да":
         for item in data[get_close_matches(text, data.keys())[0]]:
