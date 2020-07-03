@@ -1,3 +1,2 @@
 # Describtion
----
-The example of Telegram Bot written on Python. The idea is to connect the basics of working with json-databases and asynchronous bot. The english-english explanatory dictionoary was taken from the free source somewhere in the Net (I lost the link).  
+The example of Telegram Bot written on Python. The idea is to connect the basics of working with json-databases and asynchronous bot. The english-english explanatory dictionoary was taken from the free source somewhere in the Net (I lost the link). The [json_search.py](https://github.com/BobbyGoop/pyTeleBot/blob/master/resources/json_search.py) file can work by itself, however only 1 function was imported from him.  
